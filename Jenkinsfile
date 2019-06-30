@@ -3,25 +3,26 @@ pipeline {
     
     tools {nodejs "node"}
 
+    // Camillas jenkinsfil
     stages {
-         stage('dependencies') {
+        stage('Bygga') {
             steps {
                 sh 'npm install'
             }
         }
-        stage('Build') {
+        stage('Build production files') {
             steps {
                 sh 'npm run build'
             }
         }
-        stage('tests') {
+        stage('Testa') {
             steps {
                 sh 'npm run test'
             }
         }
-        stage('deploy ') {
+        stage('Deploya') {
             steps {
-                sh 'npm run deploy'
+                sh 'run deploy'
             }
         }
     }
